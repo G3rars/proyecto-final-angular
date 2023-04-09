@@ -2,8 +2,10 @@ Si deseas una vista previa puedes acceder aqui https://semilla-school.web.app/
 si quieres probar algunas funciones aqui tienes unos usuarios
 Familiar:
 papa10@test.com
+clave: 1234
 Profesor:
 teacher1@test.com
+clave: 12345678
 
 
 # APLICACIÓN PARA GESTIÓN DE COLEGIO
