@@ -1,0 +1,58 @@
+<div class="filters">
+  <input
+    placeholder="{{ 'MYSTUDENTS.FILTER' | translate}}"
+    type="text"
+    [(ngModel)]="studentName"
+  />
+</div>
+
+<fieldset class="filters">
+  <legend class="filters"> {{ "MYSTUDENTS.SORT" | translate}} </legend>
+  <div class="sort">
+    <input
+      name="year"
+      type="radio"
+      id="asc"
+      [(ngModel)]="sortByName"
+      value="asc"
+    />
+    <label for="asc"> {{ "MYSTUDENTS.UPWARD" | translate}} </label>
+  </div>
+  <div>
+    <input
+      name="year"
+      type="radio"
+      id="desc"
+      [(ngModel)]="sortByName"
+      value="desc"
+    />
+    <label for="desc"> {{ "MYSTUDENTS.FALLING" | translate}} </label>
+  </div>
+</fieldset>
+<div class="buttons">
+  <div class="boton-student">
+    <a routerLink="/teacherView" class="boton-volver">{{ "MYSTUDENTS.BUTTONS.RETURN" | translate}}</a>
+  </div>
+  <div class="boton-student">
+    <button class="boton-student-download" (click)="generatePDF(students)">
+      {{ "MYSTUDENTS.BUTTONS.DOWNLOAD" | translate}}
+    </button>
+  </div>
+</div>
+<div class="students">
+  <div
+    *ngFor="
+      let student of students | filterName : studentName | sortName : sortByName
+    "
+    class="student-card"
+  >
+    <p class="name">{{ student.name }}</p>
+    <img [src]="student.image" alt="Foto del alumno" height="100" />
+    <p class="clase"> {{ "MYSTUDENTS.CLASS" | translate}}: {{ student.grade }}</p>
+    <button class="button_teachers" (click)="goDetail(student.id)">
+      {{ "MYSTUDENTS.BUTTONS.DETAIL" | translate}} 
+    </button>
+  </div>
+</div>
+
+<!--Este código muestra una lista de estudiantes y proporciona filtrar y ordenar la lista. Incluye un campo de entrada donde se puede escribir el nombre del estudiante para buscar en la lista, botones de radio para ordenar los nombres ascendente o descendente, así como dos botones que redirigen a otra página y descargan un archivo PDF con información detallada sobre los estudiantes seleccionados. La sección donde se muestran los estudiantes utiliza directivas *ngFor y varios filtros pipe (filterName and sortName) para mostrar solo aquellos que cumplan con las condiciones establecidas por el usuario.-->

@@ -1,0 +1,150 @@
+<app-alert
+  *ngIf="alertSuccess"
+  [successAlertMsg]="msg"
+  [successAlertTitle]="'Welcome'"
+></app-alert>
+<app-alert
+  *ngIf="alertError"
+  [errorAlertMsg]="'Debes Completar todos los campos'"
+  [errorAlertTitle]="'Error'"
+></app-alert>
+
+<div
+  *ngIf="loginForm"
+  [ngClass]="{ container: !teacher, 'container right-panel-active': teacher }"
+>
+  <div class="form-container sign-up-container">
+    <form (ngSubmit)="userLogin()" [formGroup]="loginForm" action="#">
+      <h1>
+        {{
+          teacher
+            ? ("LOGIN.TITLE.1" | translate)
+            : ("LOGIN.TITLE.2" | translate)
+        }}
+      </h1>
+      <span> {{ "LOGIN.FIELDS.TITLE" | translate }} </span>
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        required
+        autocomplete="email"
+      />
+
+      <p
+        class="errors"
+        *ngIf="loginForm.get('email')?.dirty && loginForm.get('email')?.errors?.['required']
+"
+      >
+        {{ "LOGIN.FIELDS.EMAIL.1" | translate }}
+      </p>
+
+      <p
+        class="errors"
+        *ngIf="loginForm.get('email')?.dirty && loginForm.get('email')?.errors?.['email']"
+      >
+        {{ "LOGIN.FIELDS.EMAIL.2" | translate }}
+      </p>
+
+      <input
+        type="password"
+        placeholder="Contraseña"
+        formControlName="password"
+        required
+        autocomplete="current-password"
+      />
+
+      <p
+        class="errors"
+        *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.errors?.['required']
+"
+      >
+        {{ "LOGIN.FIELDS.PASSWORD.1" | translate }}
+      </p>
+      <p *ngIf="errors" class="errors">{{ errors }}</p>
+      <div>
+        <button class="button-teacher">{{ "LOGIN.FIELDS.GO" | translate }}</button>
+        <button class="button-teacher" type="button" (click)="router.navigate(['/home'])">
+          {{ "LOGIN.FIELDS.RETURN" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="form-container sign-in-container">
+    <form (ngSubmit)="userLogin()" [formGroup]="loginForm" action="#">
+      <h1>
+        {{
+          teacher
+            ? ("LOGIN.TITLE.1" | translate)
+            : ("LOGIN.TITLE.2" | translate)
+        }}
+      </h1>
+      <span>{{ "LOGIN.FIELDS.TITLE" | translate }}</span>
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        required
+        autocomplete="email"
+      />
+
+      <p
+        *ngIf="loginForm.get('email')?.dirty && loginForm.get('email')?.errors?.['required']"
+        class="errors"
+      >
+        {{ "LOGIN.FIELDS.EMAIL.1" | translate }}
+      </p>
+
+      <p
+        *ngIf="loginForm.get('email')?.dirty && loginForm.get('email')?.errors?.['email']"
+        class="errors"
+      >
+        {{ "LOGIN.FIELDS.EMAIL.2" | translate }}
+      </p>
+
+      <input
+        type="password"
+        placeholder="{{ 'LOGIN.FIELDS.PASSWORD.PASSWORD' | translate }}"
+        formControlName="password"
+        required
+        autocomplete="current-password"
+      />
+
+      <p
+        class="errors"
+        *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.errors?.['required']
+"
+      >
+        {{ "LOGIN.FIELDS.PASSWORD.1" | translate }}
+      </p>
+      <p *ngIf="errors" class="errors">{{ errors }}</p>
+      <div>
+        <button class="button-family">{{ "LOGIN.FIELDS.GO" | translate }}</button>
+        <button class="button-family" type="button" (click)="router.navigate(['/home'])">
+          {{ "LOGIN.FIELDS.RETURN" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>{{ "LOGIN.OVERLAY.1" | translate }}</h1>
+        <p>{{ "LOGIN.OVERLAY.2" | translate }}</p>
+        <button (click)="isFamily()" class="ghost" id="signIn">
+          {{ "LOGIN.OVERLAY.3" | translate }}
+        </button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>{{ "LOGIN.OVERLAY.4" | translate }}</h1>
+        <p>{{ "LOGIN.OVERLAY.5" | translate }}</p>
+        <button (click)="isFamily()" class="ghost" id="signUp">
+          {{ "LOGIN.OVERLAY.6" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Este codigo Este código es una plantilla de formulario de inicio de sesión con dos vistas alternativas según si el usuario es un profesor o no. Incluye validaciones para los campos obligatorios y la funcionalidad de mostrar alertas en caso de éxito o error al iniciar sesión. También tiene un botón para cambiar entre las distintas vistas y una redirección al hacer clic en otro botón después del inicio de sesión exitoso.   -->

@@ -1,0 +1,28 @@
+@import "../../../styles/base/colors.scss";
+.scroll-to-top {
+  position: fixed;
+  bottom: 150px;
+  right: 50px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+.fas {
+  font-size: 50px;
+  color: $colorprofesores;
+}
+.show-scrollTop {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+@media all and (max-width: 767px) {
+  .scroll-to-top{
+    bottom: 100px;
+    right: 50px;
+  }
+  .fas{
+    font-size: 30px;
+  }
+}
+
+/* Este código define estilos para un botón "scroll-to-top". El botón se posiciona en la esquina inferior derecha y su opacidad cambia según si se muestra o no. También hay un ajuste de tamaño y posición del botón para pantallas con un ancho máximo de 767px. */

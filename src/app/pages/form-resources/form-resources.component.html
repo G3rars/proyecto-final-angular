@@ -1,0 +1,54 @@
+<app-alert *ngIf="alertSuccess" [successAlertTitle]="'Exito'" [successAlertMsg]="'Recurso enviado'"></app-alert>
+<h2 class="form-title">Añadir recursos</h2>
+
+<div class="form-container">
+  <div class="form_div">
+    <form
+      *ngIf="resourcesForm"
+      (submit)="createNewResource()"
+      [formGroup]="resourcesForm"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          id="title"
+          formControlName="title"
+          placeholder="Titulo"
+          class="form-input"
+        />
+      </div>
+      <input
+        type="text"
+        id="description"
+        formControlName="description"
+        placeholder="Descripcion"
+        class="form-input"
+      />
+      <input
+        type="text"
+        id="link"
+        formControlName="link"
+        placeholder="Link"
+        class="form-input"
+      />
+      <input
+        type="text"
+        id="buy"
+        formControlName="buy"
+        placeholder="Compra"
+        class="form-input"
+      />
+      <select formControlName="type" class="form-input">
+        <option default value="">Tipo</option>
+        <option *ngFor="let type of types" [value]="type">
+          {{ type }}
+        </option>
+      </select>
+      <button type="submit" class="form-button">Enviar</button>
+    </form>
+  </div>
+</div>
+<div class="boton-volver-resources">
+  <a routerLink="/teacherView" class="boton-volver">Volver</a>
+</div>
+<!--Este código muestra una página web que tiene un formulario para agregar recursos y un botón de "volver". El formulario tiene campos para ingresar datos como título, descripción, enlace y tipo. Al hacer clic en el botón enviar, se llama a la función "createNewResource()". El código también utiliza Angular con directivas *ngIf y *ngFor junto con formGroup e ID de controles de formulario  para validar los campos del formulario.-->

@@ -1,0 +1,95 @@
+@import '../../../styles/base/colors.scss';
+@import '../../../styles/base/fonts.scss';
+@import '../../../styles/elements/form.scss';
+
+label{
+  color: black;
+}
+
+.main_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgAndForm_container{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.form-title {
+  font-family: 'Coloring';
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: $colorprofesores;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 450px;
+  margin: 0 auto;
+  background-color: $colorprofesores;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-input,
+.form-input-file {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid $colorfamilias;
+  border-radius: 5px;
+}
+
+.form-input-file {
+  
+  cursor: pointer;
+}
+
+.form-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: $colorfamilias;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.form-button:hover {
+  background-color: darken($colorfamilias, 10%);
+}
+
+
+.boton-volver {
+  @include botonVolver($colorgeneral);
+  margin-bottom: 30px; 
+}
+.errors{
+	color: $colorgeneral;
+	font-size: 18px;
+  margin-top: 5px;
+}
+
+@media (max-width: 767px) {
+  .img_div {
+    display: none;
+  }
+}
+
+/*  Este código contiene reglas de estilo para un formulario que consta de etiquetas, contenedores y elementos como campos de entrada (input), botones, etc. Se importan varios archivos SCSS con estilos básicos, incluyendo colores y fuentes. El diseño general utiliza una disposición flexbox con elementos centrados verticalmente en el contenedor principal "main_container". También hay varias clases definidas para los distintos componentes del formulario que se ajustan a diferentes tamaños de pantalla utilizando la regla @media. Además, hay algunas variables definidas en Sass que se utilizan para establecer los colores usados en el diseño del formulario. */

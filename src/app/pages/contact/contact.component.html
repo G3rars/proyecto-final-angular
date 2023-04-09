@@ -1,0 +1,34 @@
+<div class="body">
+  <form
+    action="https://formspree.io/f/xpzejojw"
+    method="POST"
+    class="container"
+  >
+    <div class="form--group">
+      <label for="Nombre">{{ "CONTACT.NAME" | translate}}</label>
+      <input
+        class="form--control"
+        type="text"
+        name="Nombre"
+        placeholder="{{ 'CONTACT.NAME' | translate}}"
+      />
+    </div>
+    <div class="form--group">
+      <label for="email">
+        {{ "CONTACT.EMAIL" | translate}}
+        <input class="form--control" type="email" name="email" placeholder="{{ 'CONTACT.EMAIL' | translate}}"/>
+      </label>
+    </div>
+    <div class="form--group">
+      <label for="Mensaje">{{ "CONTACT.MESSAGE" | translate}}</label>
+      <textarea cols="30" rows="10" class="form--control"
+      type="text"
+      name="Mensaje"
+      placeholder="{{ 'CONTACT.EMAIL' | translate}}">
+      </textarea>
+    </div>
+    <button type="submit" class="form--button">{{ "CONTACT.SEND" | translate}}</button>
+  </form>
+</div>
+
+<!-- Este es un formulario de contacto que recopila información del usuario y envía los datos a un servicio de formulario en línea. Incluye campos para el nombre, correo electrónico y mensaje del usuario, y utiliza etiquetas de traducción para mostrar el texto en varios idiomas. -->

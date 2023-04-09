@@ -1,0 +1,117 @@
+@import "../../../styles/elements/form.scss";
+@import "../../../styles/base/colors.scss";
+@import '../../../styles/base/fonts.scss';
+.filters{
+  font-family: 'Coloring';
+  color: $colorprofesores;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  input{
+    border: 2px solid $colorgeneral;
+  }
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: baseline;
+}
+.sort{
+  padding: 0px 10px;
+}
+.students {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-gap: 1px;
+}
+.hide{
+  display: none;
+}
+.student-card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .name {
+    color: $colorgeneral;
+    font-family: 'Coloring';
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .clase {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .button_teachers {
+    color: white;
+    border: 0;
+    border-radius: 15px;
+    background-color:  rgb(56, 182, 255);
+    width: 100px;
+    height: 40px;
+  }
+}
+.boton-volver {
+  @include botonVolver($colorgeneral);
+  margin-bottom: 30px;
+  margin-top: 10px;
+ 
+}
+.boton-student {
+  display:flex;
+  align-items: center;
+  
+ justify-content: center;
+}
+.div_back {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.boton-student-download{
+  border: 0;
+  @include botonVolver($colorfamilias);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .student-card{
+    .name{
+      font-size: 10px;
+    }
+    img{
+      width: 70px;
+      height: 70px;
+    }
+    .clase{
+      font-size: 12px;
+    }
+    .button_teachers{
+      font-size: 7px;
+      width: 50px;
+      height: 20px;
+    }
+    
+  }
+}
+
+/* Este código es un archivo de estilo Sass que contiene estilos para una lista de estudiantes y filtros. Incluye importaciones de otros archivos de estilo, definiciones de clases para elementos como el formulario y los botones, así como ajustes condicionales basados en la visualización del dispositivo (a través del uso de media queries). */

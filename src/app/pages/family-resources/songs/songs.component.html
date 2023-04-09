@@ -1,0 +1,31 @@
+<div class="songs-page">
+  <div class="songs-intro">
+    <h1 class="section-title">{{ "SONGS.TITLE" | translate }}</h1>
+    <div>
+      <img src="../../../../assets/resourcesImages/musica.png">
+    </div>
+    <p class="section-description">
+      {{ "SONGS.INTRO1" | translate }}
+    </p>
+    <p class="section-description">
+      {{ "SONGS.INTRO2" | translate }}
+    </p>
+    <div class="boton-volver-resources">
+      <a routerLink="/resources" class="boton-volver">{{ "SONGS.BACKBUTTON" | translate }}</a>
+    </div>
+  </div>
+
+  <div *ngFor="let song of songs" class="song-container">
+    <h2 class="song-title">{{ song.title }}</h2>
+    <iframe
+      class="song-video"
+      [src]="song.safeLink"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <div class="song-description">
+      <p>{{ song.description }}</p>
+    </div>
+  </div>
+</div>
+<!--Este código muestra  una página que muestra una lista de canciones. Incluye un encabezado con un título y una descripción, así como un botón para volver a la página de recursos. También hay un bucle de repetición que muestra cada canción en la lista, con un título, un reproductor de video incrustado y una descripción.-->

@@ -1,0 +1,178 @@
+@import "../../../../styles/base/colors.scss";
+
+.body {
+  width: 100%;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 20;
+}
+.header {
+  font-family: sans-serif;
+  position: relative;
+  &--logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;/*  */
+    text-align: center;
+    color: beige;
+  }
+}
+.logo {
+  width: 250px;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  font-weight: bold;
+  &--list {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    padding-inline-start: 0px;
+    &--url {
+      list-style: none;
+    }
+    &--url a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: $colorgeneral;
+      transition: 0.2s;
+      font-size: 15px;
+    }
+    &--url a:hover {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+}
+.icon-theme{
+  position: absolute;
+  transform: translate(-111px, -105px);
+}
+
+.icon-img{
+  width: 200px;
+  transform: rotate(180deg);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.theme-change{
+  width: 200px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.language{
+  position: absolute;
+  right: 0;
+  transform: translate(50px, -0px);
+}
+.spanish{
+  height: 50px;
+  width: 100px;
+  border-radius: 20px;
+  transform: rotate(180deg);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.english{
+  height: 50px;
+  width: 100px;
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.drop-icon {
+
+  display: none;
+  
+  img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+  }
+}
+
+
+.menu{
+    
+
+  width: 100%;
+  transition: 1s;
+  height: 0px;
+  display: none;
+  overflow: hidden;
+
+
+}
+
+
+.menu-active{
+
+  height: 150px;
+  width: 100%;
+  transition: 1s;
+  display: none;
+  overflow: hidden;
+
+}
+
+.menu-list{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+
+  div{
+
+    margin: 10px 0px 0px ;
+    font-size: 18px;
+
+  }
+
+  div a{
+
+    color: $colorgeneral;
+    font-weight: bold;
+
+  }
+}
+
+
+/* Este es un archivo  que importa otro archivo con variables de color y define estilos para diferentes partes de una página web, incluyendo un encabezado con un logotipo y enlaces, así como un botón con una imagen en la esquina superior derecha. Se utilizan selectores anidados para definir estilos para elementos específicos dentro de otros elementos, y se aplican transiciones y animaciones para mejorar la interactividad. */
+
+
+@media all and  (max-width: 600px) { 
+
+  .links{
+    display: none;
+  }
+
+  .drop-icon{
+
+    display: block;
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
+  }
+
+  .menu{
+
+    display: block;
+  }
+
+  .menu-active{
+     display: block;
+
+  }
+
+}

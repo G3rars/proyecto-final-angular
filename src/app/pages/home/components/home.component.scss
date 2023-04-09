@@ -1,0 +1,190 @@
+
+@import '../../../../styles/elements/form.scss';
+@import '../../../../styles/base/colors.scss';
+
+
+  .home-container{
+
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+  }
+
+  .image{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideIn 1.5s ease alternate;
+    animation-duration: 2s;
+    margin: 0px 4px;
+  }
+
+  img{
+
+
+    width: 794px;
+    height: 440px;
+    
+  }
+
+  .menu{
+
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(700px);
+    animation: slideUp 1.5s ease-in-out forwards .8s;
+    opacity: 0;
+    margin-bottom: 60px;
+  }
+
+  h2{
+
+    font-size: 40px;
+    
+  }
+
+  p{
+    font-size: 20px;
+  }
+
+  button{
+  
+    animation: slideUp 3s ease-in-out forwards .9s;
+    opacity: 0;
+    margin: 0px 4px;
+    @include botonVolver($colorgeneral);
+    border: 0;
+    font-size: 15px;
+
+
+  }
+
+  .login{
+   
+    width: 50%;
+    height: 30%;
+
+  }
+
+
+  
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideUp {
+    0% {
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  @media all and (min-width: 1630px) and (max-width: 2000px) {
+    .home-container{
+      margin-top: 5%;
+
+    }
+
+  }
+  
+  
+  @media all and (min-width: 1360px) and (max-width: 1630px) {
+
+    img{
+
+
+      width: 741px;
+      height: 406px;
+      
+    }
+
+    h2{
+
+      font-size: 35px;
+      
+    }
+  
+    p{
+      font-size: 15px;
+    }
+
+    button{
+  
+      font-size: 12px;
+     
+       }
+
+
+   }
+
+   @media all and (min-width: 480px) and (max-width: 1360px) {
+
+    img{
+
+
+      
+      width: 721px;
+      height: 386px;
+    }
+
+    h2{
+
+      font-size: 35px;
+      
+    }
+  
+    p{
+      font-size: 15px;
+    }
+
+    button{
+  
+   font-size: 10px;
+  
+    }
+
+   }
+
+
+   @media all and (max-width: 1115px) { 
+
+    .image{
+
+    display: none;
+    }
+
+    .menu{
+
+      width: 100%;
+  
+    }
+
+    .login{
+
+      width: 80%;
+    }
+
+
+
+   }
+  
+   /* Este es un código SCSS que define la apariencia de la página web. Establece el ancho y alto del elemento contenedor (home-container), y de algunos elementos dentro de él, como la imagen (image) y el menú (menu). También incluye animaciones para estos elementos, así como ajustes en tamaños de fuente dependiendo del tamaño del dispositivo en que se visualiza la página. Además, importa estilos previamente definidos en otros archivos scss. */

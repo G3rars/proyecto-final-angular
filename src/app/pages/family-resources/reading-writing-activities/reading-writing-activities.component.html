@@ -1,0 +1,32 @@
+<div class="page">
+  <div class="intro-div">
+    <h1 class="title">{{ "READINGWRITINGACTIVITIES.TITLE" | translate }}</h1>
+    <div class="image-container">
+      <img src="../../../../assets/resourcesImages/escribir.png" alt="Imagen de lectoescritura">
+    </div>
+    <p class="description">{{ "READINGWRITINGACTIVITIES.INTRO1" | translate }}</p>
+    <p class="description">{{ "READINGWRITINGACTIVITIES.INTRO2" | translate }}</p>
+    <div class="boton-volver-resources">
+      <a routerLink="/resources" class="boton-volver">{{ "READINGWRITINGACTIVITIES.BACKBUTTON" | translate }}</a>
+    </div>
+  </div>
+  <div class="activities-container">
+    <div class="card-container" *ngFor="let activity of readingWritingActivities">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">{{activity.title}}</h2>
+        </div>
+        <div class="card-image">
+          <img [src]="activity.link" alt="{{activity.title}}">
+        </div>
+        <div class="card-description">
+          <p>{{activity.description}}</p>
+        </div>
+        <button class="download-button" (click)="seeImage(activity.link)">{{ "READINGWRITINGACTIVITIES.VIEWBUTTON" | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Este código  se utiliza para mostrar una página de actividades de lectura y escritura. La página consta de dos secciones principales: la primera sección contiene una introducción con un título, una imagen y un par de párrafos que se traducen  . La segunda sección contiene una lista de tarjetas de actividades de lectura y escritura.
+
+El contenido de la lista de actividades se genera utilizando la directiva *ngFor de Angular, que se encarga de iterar sobre el arreglo "readingWritingActivities" y generar una tarjeta para cada actividad. Cada tarjeta contiene un título, una imagen, una descripción y un botón para ver la imagen de la actividad. Al hacer clic en el botón "ver", se llama a la función "seeImage()", que abre la imagen de la actividad en una pestaña nueva del navegador. -->

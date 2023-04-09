@@ -1,0 +1,79 @@
+<div>
+  <div>
+    <nav class="nav">
+      <a routerLink="/students" class="nav-item">{{
+        "TEACHERS.VIEW.NAV.MY STUDENTS" | translate
+        }}</a>
+      <a routerLink="/teacher-messages" class="nav-item">{{
+        "TEACHERS.VIEW.NAV.MESSAGE" | translate
+        }}</a>
+      <a routerLink="/formResources" class="nav-item">{{
+        "TEACHERS.VIEW.NAV.RESOURCES" | translate
+        }}</a>
+    </nav>
+
+    <div class="demo-app">
+      <div class="demo-app-sidebar">
+        <div class="demo-app-sidebar-section">
+          <h2>
+            {{ "TEACHERS.VIEW.CALENDAR.ALLEVENTS" | translate }} ({{
+            currentEvents.length
+            }})
+          </h2>
+        </div>
+        <div class="event-list">
+          <ul>
+            <li *ngFor="let event of currentEvents">
+              <b>{{ event.startStr }}</b>
+              <i>{{ event.title }}</i>
+            </li>
+          </ul>
+        </div>
+
+        <div class="chat-card">
+          <div class="chat-header">
+            <p>Chat en Vivo</p>
+          </div>
+          <div class="chat-body">
+            <p [ngClass]="{
+                    local: message.messageType === 1,
+                    remoto: message.messageType === 2
+                  }" *ngFor="let message of chat.chats">
+              {{ message.text }}
+            </p>
+
+          </div>
+          <div class="chat-input">
+            <form (submit)="sendMessage()" class="form">
+
+              <div class="text-msg">
+                <input type="text" [(ngModel)]="text" name="text" placeholder="Escribe tu Mensaje" />
+              </div>
+
+              <div class="button-send">
+                <input type="image" src="https://cdn-icons-png.flaticon.com/512/3814/3814282.png">
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="demo-app-main">
+        <full-calendar *ngIf="calendarVisible" [options]="calendarOptions">
+
+          <ng-template #eventContent let-arg>
+            <b>{{ arg.timeText }}</b>
+            <i>{{ arg.event.title }}</i>
+          </ng-template>
+        </full-calendar>
+       </div>
+    </div>
+  </div>
+</div>
+
+
+<!--   Este código contiene una estructura  que muestra una barra de navegación con enlaces a diferentes páginas, un calendario y un chat en vivo. El calendario se alimenta con eventos actuales y el chat permite enviar mensajes. Se utilizan directivas e interpolaciones para mostrar información dinámica. La traducción del texto se realiza mediante la librería ngx-translate-->

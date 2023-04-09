@@ -1,0 +1,74 @@
+@import '../../../../styles/base/colors.scss';
+
+.body{
+    background-color: $colorgeneral;
+    box-shadow: 1px 1px 1px 1px rgb(190, 190, 190);
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+
+}
+
+.footer--div{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 0.5rem;
+
+    &--person{
+        align-items: center;
+        text-align: center;
+        color: beige;
+        margin: auto;
+
+        &--text {
+            margin: auto;
+            font-size: 12px;
+        }
+        &--icons{
+            font-size: 12px;
+
+            &--icon{
+                color: beige;
+                padding: 5px;
+            }
+
+            &--icon i{
+                transition: 0.2s;
+            }
+    
+            &--icon i:hover{
+                font-size: 15px;
+            }
+        }
+        
+    }
+}
+
+.footer--links {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    &--list{
+        display: flex;
+        text-decoration: none;
+        padding: 0 0 0 0;
+        margin-top: 0.2rem;
+        &--url{
+            list-style: none;
+            margin-right: 0.4rem;
+            margin-left: 0.4rem;
+            font-size: 10px;
+        }
+        &--url a {
+            text-decoration: none;
+            color: beige;
+            transition: 0.2s;
+        }
+        &--url a:hover{
+            font-size: 19px;
+        }
+    }
+}
+/* Este código importa el archivo "colors.scss" y define estilos para el cuerpo y el pie de página de un sitio web. En el cuerpo se define un color de fondo, una sombra y se establece la posición relativa. En el pie de página se definen estilos para los enlaces y para un bloque de información y enlaces a redes sociales. */

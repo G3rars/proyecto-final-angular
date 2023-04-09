@@ -1,0 +1,45 @@
+
+<div *ngIf="errorMenssage" class="body">
+
+    <div class="cardAlert">
+        <div class="cardAlert__img">
+            <img src="../../../assets/logos/error.jpg" alt="">
+        </div>
+        <div class="title">
+            <p>{{ errorTitle }}</p>
+        </div>
+        <div class="msg">
+            <p>{{ errorMenssage }}</p>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="successMesage" class="body">
+
+    <div class="cardAlert">
+        <div class="cardAlert__img2">
+            <img src="../../../assets/logos/Succes.jpg" alt="">
+        </div>
+        <div class="title2">
+            <p>{{successTitle}}</p>
+        </div>
+        <div class="msg">
+            <p>{{ successMesage }}</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Este código muestra dos bloques de contenido . El primer bloque se muestra si hay un mensaje de error (`errorMenssage`), y contiene una imagen de error, un título y un mensaje de error. El segundo bloque se muestra si hay un mensaje de éxito (`successMesage`), y contiene una imagen de éxito, un título y un mensaje de éxito. Ambos bloques usan la directiva `*ngIf` para controlar su visibilidad y clases CSS para el estilo.-->
+
+
+
+
+
+
+
+
+
+
+

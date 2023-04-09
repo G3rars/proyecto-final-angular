@@ -1,0 +1,294 @@
+@import "../../../styles/base/colors.scss";
+@import "../../../styles/base/fonts.scss";
+@import "../../../styles/elements/form.scss";
+.body{
+  height: 100%;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 50px;
+}
+
+.nav-item {
+  font-size: large;
+  color: $colorprofesores;
+  font-family: "Coloring";
+  margin-right: 20px;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+
+li {
+  margin: 1.5em 0;
+  padding: 0;
+}
+
+b {
+  /* used for event dates/times */
+  margin-right: 3px;
+}
+
+.demo-app {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.demo-app-sidebar {
+
+  display: flex;
+  flex-direction: column;
+  background: #ececfc;
+  height: 700px;
+  width: 20%;
+  opacity: 0.8;
+  border: 1px solid rgba(59, 59, 59, 0.5);
+  transform: translateX(-20px);
+
+}
+
+.event-list{
+  font-size: 12px;
+  overflow-y: scroll;
+  height: 45%;
+
+}
+
+
+
+.demo-app-sidebar-section {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+
+.demo-app-main {
+  width: 80%;
+  height: 100%;
+}
+
+.fc {
+  /* the calendar root */
+  width: 90%;
+  margin: 0 auto;
+}
+
+::ng-deep body .fc {
+  font-size: 11px;
+}
+
+.checkbox{
+  margin: 0 7px;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4c4c6a;
+  border-radius: 2px;
+}
+
+.chat-card{
+
+  height:45%;
+  
+  background-image: url("https://i.pinimg.com/originals/51/ed/c0/51edc046eb80046ee4755ee71d0f19ca.jpg");
+  z-index: 9999;
+  background-size: cover;
+}
+
+.chat-header{
+
+  height: 10%;
+  background-color: $colorprofesores;
+  justify-content: center;
+  display: flex;
+  font-size: 12px;
+
+  p{
+
+    margin-top: 6px;
+    color: white;
+  }
+}
+
+.chat-body{
+height: 70%;
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+}
+
+.chat-input{
+  
+  height: 20%;
+  width: 100%;
+}
+
+.form{
+  height: 100%;
+  display: flex;
+}
+
+.text-msg{
+
+  width: 80%;
+  
+ 
+}
+
+.text-msg input{
+  background-color: $colorprofesores;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  padding: 10px;
+ 
+}
+
+input::placeholder {
+  color: #ffffff; 
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.button-send{
+
+  width: 20%;
+  background-color: $colorprofesores;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.button-send input{
+
+width: 40px;
+}
+
+
+
+
+.local {
+  padding: 20px;
+  margin-top: 4px;
+  margin-left: 5px;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  background-color: $colorprofesores;
+  width: auto; 
+  max-width: 70%; 
+  color: white;
+  align-self: flex-start;
+  word-wrap: break-word;
+  display: inline-block; 
+}
+
+  .remoto {
+    padding: 20px;
+    margin-top: 4px;
+    margin-left: 5px;
+    border-radius: 10px;
+    text-overflow: ellipsis;
+    background-color: $colorfamilias;
+    width: auto; 
+    max-width: 70%; 
+    color: white;
+    align-self: flex-end;
+    word-wrap: break-word;
+    display: inline-block; 
+    
+  }
+
+
+@media all and (max-width: 1024px) { 
+
+  .demo-app {
+  
+    flex-direction: column-reverse;
+ 
+  }
+
+  .demo-app-main{
+
+    width: 100%;
+
+  }
+
+  .fc {
+  
+    width: 100%;
+  
+  }
+
+  .demo-app-sidebar{
+
+    width: 100%;
+    height: 300px;
+    transform: translateX(0px);
+    flex-direction: row;
+    
+  }
+
+  .demo-app-sidebar-section{
+width: 20%;
+
+  }
+
+  .chat-card{
+
+    width: 40%;
+    height: 100%  ;
+  }
+
+  .event-list{
+    width: 50%;
+    height: 100%;
+  
+  }
+
+  .demo-app-sidebar-section{
+
+    margin-bottom: 10px;
+
+  }
+  
+}
+
+/* El código es un archivo  que define estilos para una aplicación de calendario y chat. Contiene reglas de estilo para elementos como la barra de navegación, el contenido principal, la lista de eventos, el chat y sus componentes (encabezado, cuerpo e entrada de texto).
+
+La hoja de estilo también define variables de colores, fuentes y márgenes. Además, hay algunas reglas para agregar efectos de desplazamiento personalizados y un fondo de imagen para el chat.
+
+El objetivo de este archivo CSS es mejorar la apariencia y la funcionalidad de una aplicación de calendario y chat, lo que hace que sea más fácil para los usuarios navegar y comunicarse */

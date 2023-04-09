@@ -1,0 +1,192 @@
+* {
+
+    margin: 0;
+
+
+}
+
+.hide{
+
+    display: none;
+}
+
+
+
+.msg{
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0px 0px 2px black;
+    opacity: 0.8;
+    height: 100px;
+    width: 100%;
+    
+}
+
+
+
+.msg-active{
+
+    
+    background-color: rgb(197, 197, 197);
+    box-shadow: 0px 0px 2px black;
+    opacity: 0.8;
+    height: 100px;
+    width: 100%;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    text-transform: capitalize;
+
+
+    &__header{
+
+   width: 60%;
+   height: 80%;
+   display: flex;
+   flex-direction: column;
+   margin-left: 30px;
+   margin-top: 10px;
+
+   
+        &--name{
+            font-size: 18px;
+            opacity: 0.8;
+            font-weight: bold;
+            width: 190px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden
+
+            
+        }
+
+        &--date{
+            width: 70%;
+            font-size: 13px;
+            transform: translateY(-10px);
+        }
+
+        
+    }
+
+
+    &__delete {
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+       
+    }
+
+    &__delete input{
+
+        width: 30px;   
+        transition: 0.2s;
+        opacity: 0.7;
+        margin-left: 10px;
+        cursor: pointer;
+        
+    }
+
+    &__delete input:hover{
+        width: 32px;
+        transition: 0.2s;
+        opacity: 1;
+    }
+
+      &__delete img{
+
+        width: 30px;   
+        transition: 0.2s;
+        opacity: 0.7;
+        margin-left: 10px;
+        cursor: pointer;
+        
+    } 
+
+    &__delete img:hover{
+        width: 32px;
+        transition: 0.2s;
+        opacity: 1;
+    }
+
+
+
+}
+
+
+.readed {
+     position: relative;
+     z-index: 0;
+}
+
+.new-mail{
+    position: absolute;
+    z-index: 1;
+}
+
+
+.notification{
+    height: 20%;
+    margin-left: 30px;
+}
+
+
+.notification p{
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+
+}
+
+button{
+
+    border:  0;
+    width: 90%;
+    background-color: aqua;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media all  and (max-width: 1000px) {
+
+    .title{
+
+        &__header{
+
+            width: 80%;
+            
+
+
+        }
+
+        &__delete{
+
+            width: 20%;
+
+            
+        }
+
+     
+    }
+}
+
+.notification{
+   
+    width: 80%;
+}
+
+/* Este codigo muestra  un fragmento de SCSS que estiliza una interfaz de correo electrónico. Define estilos para elementos como mensajes, títulos, fechas, botones de eliminar y notificaciones. Incluye estilos para mensajes activos y no leídos, y también incluye una consulta de medios para adaptar el diseño en dispositivos con pantallas más pequeñas (ancho máximo de 1000px). */

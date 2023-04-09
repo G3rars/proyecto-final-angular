@@ -1,0 +1,97 @@
+<app-alert *ngIf="alertSuccess" [successAlertTitle]="'Exito'" [successAlertMsg]="'El mensaje ha sido enviado'"></app-alert>
+<app-alert *ngIf="alertError" [errorAlertTitle]="'Error!'" [errorAlertMsg]="'Debes completar todo el formulario'"></app-alert>
+
+<h2 class="form-title">{{ "TEACHERSMESSAGE.TITLE" | translate }}</h2>
+
+<div class="main_container">
+  <div class="imgAndForm_container">
+    <div class="img_div">
+      <img src="../../../assets/logos/profe-unscreen.gif" />
+    </div>
+    <div class="form_div">
+      <form
+        *ngIf="msgForm"
+        (ngSubmit)="newNotifications()"
+        [formGroup]="msgForm"
+        class="form-container"
+      >
+        <div class="form-group">
+          <input
+            formControlName="name"
+            type="text"
+            placeholder="{{ 'TEACHERSMESSAGE.FORM.NAME' | translate }}"
+            class="form-input"
+          />
+          <p
+            class="errors"
+            *ngIf="msgForm.get('name')?.dirty && msgForm.get('name')?.errors?.['required']"
+          >
+            El nombre es requerido
+          </p>
+        </div>
+        <div class="form-group">
+          <input
+            formControlName="date"
+            type="date"
+            placeholder="Fecha"
+            class="form-input"
+          />
+          <p
+            class="errors"
+            *ngIf="msgForm.get('date')?.dirty && msgForm.get('date')?.errors?.['required']"
+          >
+            La fecha es requerida
+          </p>
+        </div>
+        <div class="form-group">
+          <input
+            formControlName="description"
+            type="text"
+            placeholder="{{ 'TEACHERSMESSAGE.FORM.DESCRIPTION' | translate }}"
+            class="form-input"
+          />
+        </div>
+        <div class="form-group">
+          <label for="image">Adjuntar Imagen</label>
+          <input
+            formControlName="image"
+            accept=".jpg,.png"
+            type="file"
+            name="image"
+            (change)="uploadImage($event)"
+            class="form-input-file"
+          />
+        </div>
+        <div class="form-group">
+          <label for="image">Enviar Calendario</label>
+          <input
+            formControlName="calendar"
+            accept=".jpg,.png"
+            type="file"
+            name="calendar"
+            (change)="uploadImage($event)"
+            class="form-input-file"
+          />
+        </div>
+        <label for="student">Selecciona Alumno</label>
+        <div class="form-group">
+          <select formControlName="student" class="form-input">
+            <option *ngFor="let student of students" [value]="student._id">
+              {{ student.name }}
+            </option>
+          </select>
+        </div>
+        <button class="form-button">
+          {{ "TEACHERSMESSAGE.FORM.BUTTON" | translate }}
+        </button>
+      </form>
+    </div>
+  </div>
+  <div>
+    <a routerLink="/teacherView" class="boton-volver">{{
+      "TEACHERSMESSAGE.RETURN" | translate
+    }}</a>
+  </div>
+</div>
+
+<!-- Este código  muestra un formulario para enviar notificaciones a estudiantes seleccionados por un profesor. La plantilla contiene campos de entrada para el nombre, fecha y descripción del mensaje, así como la capacidad de adjuntar imágenes y elegir destinatarios mediante un menú desplegable. El formulario se valida en tiempo real usando Angular y muestra mensajes de error cuando los campos son incompletos o incorrectos. También hay un botón "Enviar" al final del formulario para enviar la información ingresada por el usuario al servidor. Además, hay un enlace "Volver" que devuelve al usuario a una página anterior en la aplicación web. -->

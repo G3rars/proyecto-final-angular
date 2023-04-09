@@ -1,0 +1,201 @@
+@import '../../../styles/base/colors.scss';
+@import '../../../styles/base/fonts.scss';
+@import '../../../styles/elements/form.scss';
+
+.boton-volver{
+  display: flex;
+  justify-content: center
+}
+.boton-volver-family {
+  @include botonVolver($colorgeneral);
+}
+
+h3{
+
+  text-align: center;
+  font-size: 17px;
+}
+
+.body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.notification{
+
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+  
+}
+
+.body-list{
+  width: 30%;
+  box-shadow: 0px 0px 10px rgb(202, 202, 202);
+
+}
+
+.list-msg{
+
+  
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+  height: 90%;
+  width: 100%;
+
+
+}
+
+
+
+
+.paginator{
+
+  width: 100%;
+  height: 10%;
+  background-color: $colorgeneral;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+
+
+}
+
+
+::ng-deep.mat-mdc-paginator{
+  color: white;
+  width: 100%;
+  background-color: transparent;
+}
+
+
+
+
+.msg{
+
+  width: 70%;
+  background-color: rgb(239, 239, 239);
+  position: relative;
+  z-index: 0;
+  box-shadow: 0px 0px 10px rgb(202, 202, 202);
+  transition: 1.3s;
+  opacity: 1;
+
+}
+
+.msg-hide{
+
+  width: 0%;
+  background-color: rgb(239, 239, 239);
+  position: relative;
+  z-index: 0;
+  box-shadow: 0px 0px 10px rgb(202, 202, 202);
+  opacity: 0;
+}
+
+
+@media all and (min-width: 1000px) and (max-width: 1400px) { 
+
+.notification{
+  height: 70%;
+  transition: 1s;
+}
+
+
+
+  .msg{
+
+    width: 65%;
+  
+  }
+
+  .body-list{
+    width: 35%;
+  
+  
+  }
+
+
+  
+    
+}
+
+
+@media all and (max-width: 1000px){
+
+
+  .boton-volver-family {
+   margin-bottom: 10px;
+  }
+
+  .body{
+    height: 80Vh;
+  }
+
+  .notification{
+
+    flex-direction: column;
+ 
+  }
+
+  .body-list{
+
+    width: 100%;
+    height: 50%;
+
+  }
+
+  .msg{
+
+    width: 100%;
+    height: 50%;  
+    overflow: auto;
+    transform: translateY(30px);
+    
+  }
+
+  .notification{
+
+    margin-bottom: 50px;
+  }
+
+
+  .msg{
+
+    height: 100%;
+    transition: 1.3s;
+    opacity: 1;
+    margin-top: -10px;
+  
+  }
+  
+  .msg-hide{
+  
+    width: 100%;
+    height: 0%;
+  
+  }
+
+  
+  .paginator{
+  
+    height: 16%;
+  
+  
+  }
+
+
+
+
+}
+
+/* Este código es una hoja de estilos SCSS para una interfaz de usuario que incluye estilos para botones, encabezados, contenedores y paginadores. Los estilos se adaptan a diferentes tamaños de pantalla utilizando media queries, lo que permite una experiencia de usuario responsive en dispositivos con pantallas de 1000px a 1400px de ancho y dispositivos con pantallas de hasta 1000px de ancho.*/
