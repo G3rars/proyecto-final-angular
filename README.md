@@ -1,3 +1,11 @@
+Si deseas una vista previa puedes acceder aqui https://semilla-school.web.app/ 
+si quieres probar algunas funciones aqui tienes unos usuarios
+Familiar:
+papa10@test.com
+Profesor:
+teacher1@test.com
+
+
 # APLICACIÓN PARA GESTIÓN DE COLEGIO
 
 ![Image Movies](https://www.gifsanimados.org/data/media/276/escuela-y-colegio-imagen-animada-0043.gif)
